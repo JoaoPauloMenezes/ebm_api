@@ -4,13 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Instituicao extends Model
 {
     /** @use HasFactory<\Database\Factories\InstituicaoFactory> */
     use HasFactory;
-
-    protected $primaryKey = "instituicaoId";
 
     public function uniqueIds(): array
 {
@@ -20,11 +19,23 @@ class Instituicao extends Model
 }
 
     /**
-     * The attributes that are mass assignable.
+     * The attributes that should be visible in arrays.
      *
-     * @var list<string>
+     * @var array
      */
-    protected $fillable = [
+    protected $visible = [
+        'id',
         'name',
+        'slug'
     ];
+
+    /**
+     * Get all of the coeficienteEmprestimo for the Instituicao
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function coeficienteEmprestimo(): HasMany
+    {
+        return $this->hasMany(CoeficienteEmprestimo::class, 'instituicao_id', 'id');
+    }
 }
