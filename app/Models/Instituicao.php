@@ -20,18 +20,6 @@ class Instituicao extends Model
     }
 
     /**
-     * Interact with the  attribute.
-     *
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
-     */
-    protected function value(): Attribute
-    {
-        return Attribute::make(
-            get: fn ( $value ) => $this->slug
-        );
-    }
-
-    /**
      * The attributes that should be visible in arrays.
      *
      * @var array

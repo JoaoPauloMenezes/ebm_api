@@ -6,4 +6,5 @@ enum Convenio: string
     case INSS = 'INSS';
     case FEDERAL = 'Federal';
     case SIAPE = 'Siape';
+
 }
