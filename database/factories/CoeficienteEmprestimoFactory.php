@@ -19,7 +19,7 @@ class CoeficienteEmprestimoFactory extends Factory
     public function definition(): array
     {
         return [
-            'instituicao_id' => Instituicao::inRandomOrder()->get(),
+            'instituicao_id' => Instituicao::inRandomOrder()->first()->id,
             'convenio' => fake()->randomElement(array_column(Convenio::cases(), 'value')),
             'taxa' => fake()->randomFloat(2, 0.5, 5.0),
         ];

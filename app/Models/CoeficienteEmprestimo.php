@@ -36,14 +36,15 @@ class CoeficienteEmprestimo extends Model
     protected $visible = [
         'convenio',
         'taxa',
+        'instituicao_id'
     ];
 
     /**
-     * Get the intituicao that owns the CoeficienteEmprestimo
+     * Get the instituicao that owns the CoeficienteEmprestimo
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function intituicao(): BelongsTo
+    public function instituicoes(): BelongsTo
     {
         return $this->belongsTo(Instituicao::class, 'instituicao_id', 'id');
     }

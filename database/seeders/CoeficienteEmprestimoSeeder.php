@@ -14,7 +14,7 @@ class CoeficienteEmprestimoSeeder extends Seeder
     public function run(): void
     {
         CoeficienteEmprestimo::factory()
-            ->count(30)
+            ->count(50)
             ->create();
     }
 }

@@ -27,6 +27,7 @@ class Instituicao extends Model
     protected $visible = [
         'name',
         'slug',
+        'coeficienteEmprestimo'
     ];
 
     /**
